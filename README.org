@@ -319,7 +319,7 @@ doas cp ~/podman/freebsd-nixpkgs/assets/applications/browsers/firefox/icon/firef
 
 [[https://www.torproject.org/download/]]
 
-***** Change directory into the firefox directory
+***** Change directory into the Tor Browser directory
 
 #+begin_src sh
 cd ~/podman/freebsd-nixpkgs/containers/browsers/tor-browser
