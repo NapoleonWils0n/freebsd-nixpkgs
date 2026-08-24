@@ -1,0 +1,11 @@
+[Desktop Entry]
+Categories=Network;WebBrowser;Security
+Comment=Privacy-focused browser routing traffic through the Tor network
+Exec=sh -c "wrapper-freebsd-nix -j tor-browser-nix -a "${HOME}/.local/state/nix/profiles/profile/bin/tor-browser" -c "${HOME}/podman/freebsd-nixpkgs/containers/browsers/tor-browser/compose.yaml" -e "${HOME}/podman/freebsd-nixpkgs/containers/browsers/tor-browser/.env" %U"
+GenericName=Web Browser
+Icon=tor-browser
+MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;x-scheme-handler/http;x-scheme-handler/https
+Name=Tor Browser nix
+StartupWMClass=Tor Browser
+Type=Application
+Version=1.5

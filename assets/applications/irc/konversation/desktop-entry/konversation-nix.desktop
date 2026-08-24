@@ -1,0 +1,16 @@
+[Desktop Entry]
+Version=1.0
+Name=Konversation-nix
+Exec=sh -c "wrapper-freebsd-nix -j konversation-nix -a "${HOME}/.local/state/nix/profiles/profile/bin/konversation" -c "${HOME}/podman/freebsd-nixpkgs/containers/irc/konversation/compose.yaml" -e "${HOME}/podman/freebsd-nixpkgs/containers/irc/konversation/.env" %u"
+Type=Application
+Icon=konversation
+MimeType=x-scheme-handler/irc;x-scheme-handler/ircs;
+GenericName=IRC Client
+Terminal=false
+Categories=Qt;KDE;Network;IRCClient;
+DBusActivatable=true
+X-DBUS-StartupType=Unique
+X-DBUS-ServiceName=org.kde.konversation
+StartupNotify=true
+StartupWMClass=konversation
+SingleMainWindow=true

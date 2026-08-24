@@ -1,0 +1,11 @@
+*.env
+*flake.lock
+containers/custom
+containers/browsers/firefox/dotfiles
+containers/browsers/tor-browser/dotfiles
+containers/development/flakes-nix/dotfiles
+containers/development/flakes-nix/bin
+containers/development/flakes-nix/workspace
+containers/irc/konversation/dotfiles
+containers/video/handbrake/dotfiles
+containers/web/searxng/dotfiles
