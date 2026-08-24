@@ -298,7 +298,7 @@ doas podman-compose down
 
 ***** firefox-nix.desktop
 
-Copy the freebsd-podman.desktop file into
+Copy the firefox-nix.desktop file into
 
 #+begin_example
 ~/.local/share/applications
@@ -395,7 +395,7 @@ doas podman-compose down
 
 ***** tor-browser-nix.desktop
 
-Copy the freebsd-podman.desktop file into
+Copy the tor-browser.desktop file into
 
 #+begin_example
 ~/.local/share/applications
