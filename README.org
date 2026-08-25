@@ -7,7 +7,7 @@ Nixpkgs Podman containers on Freebsd with home-manager and flakes
 This allows you to upgrade applications using home-manager
 instead of destroying the container and rebuilding it.
 
-Development enviorment with flakes for use with nix-develop
+Development environment with flakes for use with nix-develop
 
 Run Linux command line and gui applications on FreeBSD with full Nvidia Cuda hardware acceleration.
 
@@ -18,7 +18,7 @@ Wayland/X11 and PulseAudio Pass-through.
 
 Displays graphics and routes audio via native FreeBSD sockets mounted inside the Podman container.
 
-Hardware acclerated video.
+Hardware accelerated video.
 
 Persistent storage for files so settings are retained when stopping containers.
 
@@ -68,7 +68,7 @@ GUI Applications launched with desktop entries on Freebsd.
 
 [[https://docs.searxng.org/]]
 
-** Inital set up
+** Initial set up
 *** Follow the podman install instructions
 
 Follow the podman install instruction to get podman working.
@@ -143,7 +143,7 @@ load-module module-native-protocol-unix socket=/tmp/pulseaudio.socket
 
 *** wrapper-freebsd-nix
 
-The wrapper-freebsd-nix script is used to launch gui application and works with the wrapper-podman script which is installed in the podman containers and a desktop entry.
+The wrapper-freebsd-nix script is used to launch gui applications and works with the wrapper-podman script which is installed in the podman containers and a desktop entry.
 
 Copy the wrapper-freebsd script to your bin directory.
 
@@ -1321,7 +1321,7 @@ mkdir -p ~/podman
 set up doas so you can can run podman without being prompted for a password
 
 #+begin_src sh
-doas vi 
+doas vi /usr/local/etc/doas.conf
 #+end_src
 
 change username to your username
@@ -1368,7 +1368,7 @@ permit nopass keepenv root as root
 
 *** devfs.rules
 
-Add the localrules to your rc.conf with syscr
+Add the localrules to your rc.conf with sysrc
 
 #+begin_src sh
 doas sysrc devfs_system_ruleset="localrules"
@@ -1418,7 +1418,7 @@ add path 'speaker*' unhide
 
 *** podman test
 
-run the hello workd podmand container
+run the hello world podman container
 
 #+begin_src sh
 doas podman run --rm docker.io/dougrabson/hello
