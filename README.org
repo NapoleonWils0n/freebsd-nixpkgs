@@ -4,6 +4,8 @@
 
 Nixpkgs Podman containers on Freebsd with home-manager and flakes
 
+🎥 [[https://youtu.be/kbz-wWjVJ1I][Nixpkgs Podman containers on Freebsd with home-manager and flakes]]
+
 This allows you to upgrade applications using home-manager
 instead of destroying the container and rebuilding it.
 
