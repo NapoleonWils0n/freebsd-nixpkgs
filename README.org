@@ -147,7 +147,7 @@ load-module module-native-protocol-unix socket=/tmp/pulseaudio.socket
 
 The wrapper-freebsd-nix script is used to launch gui applications and works with the wrapper-podman script which is installed in the podman containers and a desktop entry.
 
-Copy the wrapper-freebsd script to your bin directory.
+Copy the wrapper-freebsd-nix script to your bin directory.
 
 If you have a bin directory in your home.
 
