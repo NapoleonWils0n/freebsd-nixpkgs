@@ -844,6 +844,24 @@ Copy the translatelocally-nix.desktop file into
 cp ~/podman/freebsd-nixpkgs/assets/applications/translation/translatelocally/desktop-entry/translatelocally-nix.desktop ~/.local/share/applications
 #+end_src
 
+***** External repositories
+
+You can add a custom repository from the Settings->Repositories menu.
+
+The Bergamot repository is the one used by default.
+
+Bergamot
+
+[[https://translatelocally.com/models.json]]
+
+OpusMT
+
+[[https://object.pouta.csc.fi/OPUS-MT-models/app/models.json]]
+
+HPLT
+
+[[https://raw.githubusercontent.com/hplt-project/bitextor-mt-models/refs/heads/main/models.json]]
+
 *** Video
 **** Handbrake
 ***** Resources
