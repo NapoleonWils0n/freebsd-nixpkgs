@@ -8,5 +8,6 @@ containers/development/flakes-nix/bin
 containers/development/flakes-nix/workspace
 containers/irc/konversation/dotfiles
 containers/translation/translatelocally/dotfiles
+containers/translation/translatelocally/workspace
 containers/video/handbrake/dotfiles
 containers/web/searxng/dotfiles
