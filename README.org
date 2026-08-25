@@ -932,7 +932,7 @@ mkdir -p ~/make
 Copy the searxng directory to the make directory
 
 #+begin_src sh
-cp ~/podman/freebsd-nixpkgs/assets/makefiles/searxng ~/make
+cp -r ~/podman/freebsd-nixpkgs/assets/makefiles/searxng ~/make
 #+end_src
 
 Change into the make searxng directory
