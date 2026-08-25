@@ -834,14 +834,14 @@ doas podman-compose down
 
 ***** translatelocally-nix.desktop
 
-Copy the konversation-nix.desktop file into
+Copy the translatelocally-nix.desktop file into
 
 #+begin_example
 ~/.local/share/applications
 #+end_example
 
 #+begin_src sh
-cp ~/podman/freebsd-nixpkgs/assets/applications/translation/translatelocally/desktop-entry/translatelocally.desktop ~/.local/share/applications
+cp ~/podman/freebsd-nixpkgs/assets/applications/translation/translatelocally/desktop-entry/translatelocally-nix.desktop ~/.local/share/applications
 #+end_src
 
 *** Video
