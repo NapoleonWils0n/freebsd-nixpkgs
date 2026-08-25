@@ -748,6 +748,7 @@ doas cp ~/podman/freebsd-nixpkgs/assets/applications/irc/konversation/icon/konve
 #+end_src
 
 *** Translation
+**** translatelocally
 ***** Resources
 
 [[https://github.com/XapaJIaMnu/translatelocally]]
