@@ -846,7 +846,10 @@ cp ~/podman/freebsd-nixpkgs/assets/applications/translation/translatelocally/des
 
 ***** External repositories
 
-You can add a custom repository from the Settings->Repositories menu.
+You can add a custom repository from the Edit -> Translator settings
+
+Then selecting the Repositories tab and clicking import repository,
+pasting in the url and adding a name
 
 The Bergamot repository is the one used by default.
 
