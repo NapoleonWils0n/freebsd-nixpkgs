@@ -747,6 +747,97 @@ Copy the desktop icon into place
 doas cp ~/podman/freebsd-nixpkgs/assets/applications/irc/konversation/icon/konversation.png /usr/local/share/icons/hicolor/scalable/apps/
 #+end_src
 
+*** Translation
+***** Resources
+
+[[https://github.com/XapaJIaMnu/translatelocally]]
+
+***** Change directory into the konversation directory
+
+#+begin_src sh
+cd ~/podman/freebsd-nixpkgs/containers/translation/translatelocally
+#+end_src
+
+***** Run the Makefile
+
+Run make Makefile which will create the persistent storage directories.
+
+And the .env file which will set your username, id and set the mounted Downloads directory.
+
+Make sure to review the .env file to make sure everything is correct.
+
+#+begin_src sh
+make
+#+end_src
+
+***** Build the container
+
+#+begin_src sh
+doas podman build \
+--network=host \
+--os linux \
+--arch amd64 \
+--build-arg HOST_UID="$(id -u)" \
+--build-arg HOST_USER="${USER}" \
+-t localhost/translatelocally-nix .
+#+end_src
+
+***** Start the container
+
+#+begin_src sh
+doas podman-compose up -d
+#+end_src
+
+***** Enter container
+
+#+begin_src sh
+doas podman exec -it -u ${USER} -e USER=${USER} translatelocally-nix /bin/sh -l
+#+end_src
+
+***** home-manager install and switch
+
+#+begin_src sh
+nix run github:nix-community/home-manager -- switch --flake ~/.config/home-manager
+#+end_src
+
+***** flake update
+
+#+begin_src sh
+nix flake update --flake ~/.config/home-manager
+#+end_src
+
+***** home-manager switch
+
+#+begin_src sh
+home-manager switch --flake ~/.config/home-manager
+#+end_src
+
+***** exit the container
+
+When you have finished you can exit the container.
+
+#+begin_src sh
+exit
+#+end_src
+
+And then stop the container.
+
+#+begin_src sh
+doas podman-compose down
+#+end_src
+
+***** translatelocally-nix.desktop
+
+Copy the konversation-nix.desktop file into
+
+#+begin_example
+~/.local/share/applications
+#+end_example
+
+#+begin_src sh
+cp ~/podman/freebsd-nixpkgs/assets/applications/translation/translatelocally/desktop-entry/translatelocally.desktop ~/.local/share/applications
+#+end_src
+
 *** Video
 **** Handbrake
 ***** Resources

@@ -7,5 +7,6 @@ containers/development/flakes-nix/dotfiles
 containers/development/flakes-nix/bin
 containers/development/flakes-nix/workspace
 containers/irc/konversation/dotfiles
+containers/translation/translatelocally/dotfiles
 containers/video/handbrake/dotfiles
 containers/web/searxng/dotfiles
