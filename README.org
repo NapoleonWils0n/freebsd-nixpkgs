@@ -65,6 +65,11 @@ GUI Applications launched with desktop entries on Freebsd.
 
 [[https://handbrake.fr/]]
 
+**** Translation
+***** translatelocally
+
+[[https://github.com/XapaJIaMnu/translatelocally]]
+
 **** Web
 ***** Searxng
 
