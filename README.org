@@ -865,6 +865,10 @@ HPLT
 
 [[https://raw.githubusercontent.com/hplt-project/bitextor-mt-models/refs/heads/main/models.json]]
 
+***** Using Firefox models with translatelocally
+
+[[https://github.com/NapoleonWils0n/cerberus/blob/master/translatelocally/translatelocally-firefox-models.org]]
+
 *** Video
 **** Handbrake
 ***** Resources
