@@ -265,6 +265,8 @@ printf "%s\n" \
 	"    gnome-themes-extra" \
 	"    libsForQt5.qt5ct" \
 	"    qt6Packages.qt6ct" \
+	"    noto-fonts-cjk-sans" \
+	"    noto-fonts-cjk-serif" \
 	"    fontconfig" \
 	"    translatelocally" \
 	"  ] ++ fonts;" \
