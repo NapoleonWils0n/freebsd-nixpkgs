@@ -46,10 +46,6 @@ services:
     stop_signal: SIGKILL
 
 
-    # tmpfs
-    tmpfs:
-          - /usr/lib64/nvidia:rw,mode=0755
-
 #===============================================================================
 # Volume Mounts (Host Bindings & Jail Sockets)
 #===============================================================================
@@ -257,24 +253,6 @@ services:
 
 
         #=======================================================================
-        # ISOLATE NVIDIA LIBRARIES VIA SYMLINKS
-        #=======================================================================
-
-        mkdir -p /usr/lib64/nvidia
-
-        # Symlink all NVIDIA and CUDA libraries from nvidia-host into /usr/lib64/nvidia
-        for lib in /usr/lib64/nvidia-host/*nvidia* \
-                   /usr/lib64/nvidia-host/libcuda* \
-                   /usr/lib64/nvidia-host/libnv* \
-                   /usr/lib64/nvidia-host/libEGL_nvidia* \
-                   /usr/lib64/nvidia-host/libGLES*nvidia*; do
-          if [ -e "$lib" ]; then
-            ln -sf "$lib" /usr/lib64/nvidia/
-          fi
-        done
-
-
-        #=======================================================================
         # Append environment parameters into .bashrc to survive runuser switch
         #=======================================================================
 
@@ -291,9 +269,6 @@ services:
         chmod 644 /home/${HOST_USER}/.bashrc
 
         {
-
-          # append the linuxulator libraries to the LD_LIBRARY_PATH 
-          echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib64/nvidia'
 
           # LD_PRELOAD the dummy-uvm.so for the gpu
           echo 'export LD_PRELOAD=/usr/lib64/dummy-uvm.so'
