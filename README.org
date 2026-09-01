@@ -11,10 +11,7 @@ instead of destroying the container and rebuilding it.
 
 Development environment with flakes for use with nix-develop
 
-Run Linux command line and gui applications on FreeBSD with full Nvidia Cuda hardware acceleration.
-
-Mounts the Linuxulator libraries from Freebsd into the Podman containers,
-so you dont need to install the Nvidia driver into the container.
+Run Linux command line and gui applications on FreeBSD.
 
 Wayland/X11 and PulseAudio Pass-through.
 
@@ -43,10 +40,6 @@ GUI Applications launched with desktop entries on Freebsd.
 
 [[https://en.cppreference.com/c]]
 
-***** ffmpeg
-
-[[https://www.ffmpeg.org/]]
-
 ***** Latex
 
 [[https://www.tug.org/]]
@@ -59,11 +52,6 @@ GUI Applications launched with desktop entries on Freebsd.
 ***** Konversation
 
 [[https://konversation.kde.org/]]
-
-**** Video
-***** Handbrake
-
-[[https://handbrake.fr/]]
 
 **** Translation
 ***** translatelocally
@@ -477,20 +465,6 @@ run nix develop
 nix develop
 #+end_src
 
-****** ffmpeg
-
-change into the ffmpeg directory
-
-#+begin_src sh
-cd flakes/ffmpeg
-#+end_src
-
-run nix develop
-
-#+begin_src sh
-nix develop
-#+end_src
-
 ****** latex
 
 change into the latex directory
@@ -868,104 +842,6 @@ HPLT
 ***** Using Firefox models with translatelocally
 
 [[https://github.com/NapoleonWils0n/cerberus/blob/master/translatelocally/translatelocally-firefox-models.org]]
-
-*** Video
-**** Handbrake
-***** Resources
-
-[[https://github.com/handbrake/handbrake]]
-
-***** Change directory into the handbrake directory
-
-#+begin_src sh
-cd ~/podman/freebsd-nixpkgs/containers/video/handbrake
-#+end_src
-
-***** Run the Makefile
-
-Run make Makefile which will create the persistent storage directories.
-
-And the .env file which will set your username, id and set the mounted Downloads directory.
-
-Make sure to review the .env file to make sure everything is correct.
-
-#+begin_src sh
-make
-#+end_src
-
-***** Build the container
-
-#+begin_src sh
-doas podman build \
---network=host \
---os linux \
---arch amd64 \
---build-arg HOST_UID="$(id -u)" \
---build-arg HOST_USER="${USER}" \
--t localhost/handbrake-nix .
-#+end_src
-
-***** Start the container
-
-#+begin_src sh
-doas podman-compose up -d
-#+end_src
-
-***** Enter container
-
-#+begin_src sh
-doas podman exec -it -u ${USER} -e USER=${USER} handbrake-nix /bin/sh -l
-#+end_src
-
-***** home-manager install and switch
-
-#+begin_src sh
-nix run github:nix-community/home-manager -- switch --flake ~/.config/home-manager
-#+end_src
-
-***** flake update
-
-#+begin_src sh
-nix flake update --flake ~/.config/home-manager
-#+end_src
-
-***** home-manager switch
-
-#+begin_src sh
-home-manager switch --flake ~/.config/home-manager
-#+end_src
-
-***** exit the container
-
-When you have finished you can exit the container.
-
-#+begin_src sh
-exit
-#+end_src
-
-And then stop the container.
-
-#+begin_src sh
-doas podman-compose down
-#+end_src
-
-***** handbrake-nix.desktop
-
-Copy the handbrake-nix.desktop file into
-
-#+begin_example
-~/.local/share/applications
-#+end_example
-
-#+begin_src sh
-cp ~/podman/freebsd-nixpkgs/assets/applications/video/handbrake/handbrake-nix.desktop ~/.local/share/applications
-#+end_src
-
-Copy the desktop icon into place
-
-#+begin_src sh
-doas cp ~/podman/freebsd-nixpkgs/assets/applications/video/handbrake/icon/fr.handbrake.ghb.png /usr/local/share/icons/hicolor/scalable/apps/
-#+end_src
 
 *** Web
 **** searxng
