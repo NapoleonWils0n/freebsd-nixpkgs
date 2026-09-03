@@ -48,6 +48,10 @@ GUI Applications launched with desktop entries on Freebsd.
 
 [[https://rust-lang.org/]]
 
+***** Tesseract
+
+[[https://github.com/tesseract-ocr/tesseract]]
+
 **** irc
 ***** Konversation
 
@@ -600,6 +604,34 @@ fd -t f -e exe --max-depth 1 . target/x86_64-pc-windows-gnu/release/ -x cp {} ~/
 
 #+begin_src sh
 cargo clean
+#+end_src
+
+****** tesseract
+
+change into the tesseract directory
+
+#+begin_src sh
+cd flakes/tesseract
+#+end_src
+
+run nix develop
+
+#+begin_src sh
+nix develop
+#+end_src
+
+******* change into the workspace directory
+
+#+begin_src sh
+cd ../../workspace
+#+end_src
+
+copy an image to process into the workspace directory
+
+******* tesseract usage
+
+#+begin_src sh
+tesseract input.jpg output.txt
 #+end_src
 
 ***** flake update

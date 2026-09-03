@@ -1,0 +1,31 @@
+{
+  description = "A development shell for tesseract";
+
+  inputs = {
+    nixpkgs.url = "github:NixOS/Nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
+  };
+
+  outputs = { self, nixpkgs, flake-utils }:
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = import nixpkgs {
+          inherit system;
+        };
+      in
+      {
+        devShells.default = pkgs.mkShell {
+          name = "tesseract-shell";
+
+          packages = with pkgs; [
+            tesseract
+          ];
+
+          TESSDATA_PREFIX = "${pkgs.tesseract}/share/tessdata";
+
+          shellHook = ''
+            echo "Entering tesseract shell"
+          '';
+        };
+      });
+}
