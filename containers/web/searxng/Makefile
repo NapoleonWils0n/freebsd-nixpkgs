@@ -114,6 +114,10 @@ searxng_cfg: searxng
 	"    - json" \
 	"    - rss" \
 	"engines:" \
+	"  - name: bing" \
+	"    disabled: false" \
+	"  - name: duckduckgo" \
+	"    disabled: true" \
 	"  - name: wikidata" \
 	"    disabled: true" \
 	"  - name: radio browser" \
